@@ -11,7 +11,7 @@ const initialCountColor = {
   Green: 0
 };
 
-function Page() {
+function Page= () => {
   const [colorCounts, setColorCounts] = useState(initialCountColor);
   const [selectedColor, setSelectedColor] = useState('black');
 
