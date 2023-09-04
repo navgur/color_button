@@ -1,4 +1,4 @@
-const ColorDisplay = ({ currentcolor }) => {
+ const ColorDisplay = ({ currentcolor }) => {
   return (
     <div>
       <div className="color-button-app">

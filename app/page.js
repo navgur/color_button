@@ -1,8 +1,10 @@
-  "use client" 
+   "use client"
+
 import React, { useState } from 'react';
 import ColorDisplay from './ColorDisplay';
 import CountBox from './CountBox';
-import ColorButton from './ColorButton';
+import ColorButton from './ColorButton.js';
+import './Global.css';
 
 const initialCountColor = {
   Red: 0,
@@ -11,7 +13,7 @@ const initialCountColor = {
   Green: 0
 };
 
-function Page= () => {
+const Page = () => { 
   const [colorCounts, setColorCounts] = useState(initialCountColor);
   const [selectedColor, setSelectedColor] = useState('black');
 
@@ -25,14 +27,15 @@ function Page= () => {
 
   return (
     <div>
-     <div className="colorchange">
-      <ColorDisplay currentcolor={selectedColor} />
-      <CountBox colorcount={colorCounts} /></div>
+      <div className="colorchange">
+        <ColorDisplay currentcolor={selectedColor} />
+        <CountBox colorcount={colorCounts} />
+      </div>
       <div className="button-container">
-        <ColorButton color="Red" onClick={handleColorClick} />
-        <ColorButton color="Yellow" onClick={handleColorClick} />
-        <ColorButton color="Blue" onClick={handleColorClick} />
-        <ColorButton color="Green" onClick={handleColorClick} />
+        <ColorButton color="Red" onClick={() => handleColorClick("Red")} />
+        <ColorButton color="Yellow" onClick={() => handleColorClick("Yellow")} />
+        <ColorButton color="Blue" onClick={() => handleColorClick("Blue")} />
+        <ColorButton color="Green" onClick={() => handleColorClick("Green")} />
       </div>
     </div>
   );
